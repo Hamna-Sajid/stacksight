@@ -9,6 +9,7 @@ import numpy as np
 import plotly.express as px
 import warnings
 import os
+import urllib.request
 
 warnings.filterwarnings("ignore")
 
@@ -134,7 +135,16 @@ def explode_multi(df: pd.DataFrame, col: str, sep: str = ";") -> pd.Series:
 
 # ── Pre-load data so sidebar filters are populated on first render ────────────
 _default_path = "results.csv"
-_data_exists  = os.path.exists(_default_path)
+_DATA_URL = (
+    "https://github.com/StackExchange/Survey/raw/"
+    "refs/heads/main/packages/archive/2024/results.csv"
+)
+
+if not os.path.exists(_default_path):
+    with st.spinner("Downloading dataset (152 MB) — this only happens once…"):
+        urllib.request.urlretrieve(_DATA_URL, _default_path)
+
+_data_exists = os.path.exists(_default_path)
 
 if _data_exists:
     raw_df         = load_data(_default_path)
@@ -199,27 +209,10 @@ with st.sidebar:
 
 
 # ─────────────────────────────────────────────
-# GATE: show instructions if CSV not found
+# GATE: show error if CSV still missing after download attempt
 # ─────────────────────────────────────────────
 if not os.path.exists(data_path):
-    st.title("Stack Overflow Developer Survey 2024")
-    st.markdown(
-        '<div class="info-banner"><strong>Dataset not found.</strong> '
-        'Follow the steps below to download it, then restart the app.</div>',
-        unsafe_allow_html=True,
-    )
-    st.markdown("""
-### How to get the dataset
-1. Go to **[https://survey.stackoverflow.co/](https://survey.stackoverflow.co/)**
-2. Click **Data (CSV)** next to **2024**
-3. Save as `results.csv` in the same folder as `app.py`
-4. Run `streamlit run app.py`
-""")
-    st.code(
-        "curl -L -o results.csv https://github.com/StackExchange/Survey/raw/"
-        "refs/heads/main/packages/archive/2024/results.csv",
-        language="bash",
-    )
+    st.error("Dataset could not be loaded. Please check your internet connection and restart the app.")
     st.stop()
 
 
