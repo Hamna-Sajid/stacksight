@@ -73,7 +73,7 @@ Key columns used in this project:
 ## Project structure
 
 ```
-week1-stackoverflow-dashboard/
+stacksight/
 │
 ├── app.py                  ← Streamlit dashboard (main file)
 ├── results.csv             ← Dataset (download separately — see below)
@@ -94,8 +94,8 @@ week1-stackoverflow-dashboard/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/week1-stackoverflow-dashboard.git
-cd week1-stackoverflow-dashboard
+git clone https://github.com/Hamna-Sajid/stacksight.git
+cd stacksight
 ```
 
 ### 2. Create a virtual environment (recommended)
@@ -147,10 +147,13 @@ The dashboard opens at `http://localhost:8501` in your browser.
 
 | Section | Preview |
 |---|---|
-| Overview & metrics | [Overview](assets/screenshots/Dataset overview.png) |
-| Language chart | [Language chart](assets/screenshots/Most-used programming languages.png) |
-| Salary by years of experience | [Salary distribution by experience](assets/screenshots/Salary by experience.png) |
-| AI sentiment | [AI sentiment](assets/screenshots/Remote work split & AI sentiment.png) |
+| [Overview & metrics](assets/screenshots/Dataset%20overview.png) | ![Overview & metrics](assets/screenshots/Dataset%20overview.png) |
+| [Language chart](assets/screenshots/Most-used%20programming%20languages.png) | ![Language chart](assets/screenshots/Most-used%20programming%20languages.png) |
+| [Salary distribution by years of experience](assets/screenshots/Salary%20distribution%20by%20years%20of%20experience.png) | ![Salary distribution by years of experience](assets/screenshots/Salary%20distribution%20by%20years%20of%20experience.png) |
+| [Remote work & AI sentiment](assets/screenshots/Remote%20work%20split%20%26%20AI%20sentiment.png) | ![Remote work & AI sentiment](assets/screenshots/Remote%20work%20split%20%26%20AI%20sentiment.png) |
+| [Salary vs years of professional coding](assets/screenshots/Salary%20vs%20years%20of%20professional%20coding.png) | ![Salary vs years of professional coding](assets/screenshots/Salary%20vs%20years%20of%20professional%20coding.png) |
+| [Top 10 countries by respondent count](assets/screenshots/Top%2010%20countries%20by%20respondent%20count.png) | ![Top 10 countries by respondent count](assets/screenshots/Top%2010%20countries%20by%20respondent%20count.png) |
+| [AI tool usage vs remote work arrangement](assets/screenshots/AI%20tool%20usage%20vs%20remote%20work%20arrangement.png) | ![AI tool usage vs remote work arrangement](assets/screenshots/AI%20tool%20usage%20vs%20remote%20work%20arrangement.png) |
 
 ---
 
