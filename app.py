@@ -202,9 +202,9 @@ with st.sidebar:
 # GATE: show instructions if CSV not found
 # ─────────────────────────────────────────────
 if not os.path.exists(data_path):
-    st.title("📊 Stack Overflow Developer Survey 2024")
+    st.title("Stack Overflow Developer Survey 2024")
     st.markdown(
-        '<div class="info-banner">⚠️ <strong>Dataset not found.</strong> '
+        '<div class="info-banner"><strong>Dataset not found.</strong> '
         'Follow the steps below to download it, then restart the app.</div>',
         unsafe_allow_html=True,
     )
