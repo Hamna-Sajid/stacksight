@@ -187,7 +187,7 @@ def clean_data(df: pd.DataFrame):
 # ─────────────────────────────────────────────
 # SIDEBAR
 # ─────────────────────────────────────────────
-default_path = "dataset.csv"
+default_path = "week2-eda-dashboard/dataset.csv"
 
 with st.sidebar:
     st.markdown(
